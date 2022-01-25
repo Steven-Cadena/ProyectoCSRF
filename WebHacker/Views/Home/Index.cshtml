@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Video Juego Gratis</h1>
+    <p>Miles de juegos gratis aquí</p>
+    <img src="~/images/ferrari.jpg" style="width:150px; height:150px;"/>
+    <form method="post" action="https://localhost:44388/Tienda/Productos">
+        <input type="hidden" name="direccion" class="form-control" value="Casa del hacker,pringao"/>
+        <br />
+        <button type="submit" class="btn btn-warning">
+            Juega ahora !!
+        </button>
+        <input type="hidden" name="producto"
+               class="form-control" value="Maserati 200000€" /> 
+        <br />
+        <input type="hidden" name="producto"
+               class="form-control" value="Samsung S21 Ultra 2000€" /> 
+        <br />
+        <input type="hidden" name="producto"
+               class="form-control" value="Play 5 900€" /> 
+        <br />
+    </form>
+</div>
+

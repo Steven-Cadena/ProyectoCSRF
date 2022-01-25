@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProyectoCSRF
+namespace WebHacker
 {
     public class Startup
     {
@@ -23,15 +23,6 @@ namespace ProyectoCSRF
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            /****************************IMPORTANTE*/
-            services.AddDistributedMemoryCache();
-            services.AddSession(options =>
-            {
-                options.IdleTimeout = TimeSpan.FromMinutes(15);
-            });
-            /*ESTO ES PARA EL TOKEN LOS FORMULARIOS Y LA VALIDACION **********IMPORTANTE*/
-            services.AddAntiforgery();
-            /***************************/
             services.AddControllersWithViews();
         }
 
@@ -54,8 +45,6 @@ namespace ProyectoCSRF
             app.UseRouting();
 
             app.UseAuthorization();
-            /*IMPORTANTE para las sessiones*/
-            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
